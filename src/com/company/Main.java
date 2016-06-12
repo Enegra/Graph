@@ -51,6 +51,7 @@ public class Main {
         System.out.println("Removing edge between first and fourth vertex");
         graph.removeEdge(0,3);
         graph.printGraph();
+        System.out.println("Graph contains vertex 8: " + graph.contains(8));
     }
 
     public static void main(String[] args) {
