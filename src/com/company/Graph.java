@@ -24,8 +24,13 @@ public class Graph<T> {
     }
 
     public void addVertex(T data) {
-        Vertex newVertex = new Vertex(data);
-        vertices.add(newVertex);
+        if (!contains(data)){
+            Vertex newVertex = new Vertex(data);
+            vertices.add(newVertex);
+        }
+        else {
+            System.out.println("The graph already contains such vertex");
+        }
     }
 
     public void removeVertex(int index) {
@@ -78,6 +83,15 @@ public class Graph<T> {
             }
         }
         return false;
+    }
+
+    private Vertex search(T data){
+        for (Vertex vertex : vertices) {
+            if (vertex.getData() == data) {
+                return vertex;
+            }
+        }
+        return null;
     }
 
 
