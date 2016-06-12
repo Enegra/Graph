@@ -35,7 +35,7 @@ public class Edge {
 
     @Override
     public String toString(){
-        return "START: " + start + "END: " + end + "WEIGHT: " + weight;
+        return "EDGE START: " + start + " END: " + end + " WEIGHT: " + weight;
     }
 
     public boolean contains(Vertex vertex){

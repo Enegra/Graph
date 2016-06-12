@@ -169,14 +169,19 @@ public class Graph<T> {
     }
 
     private boolean isValidEdge(int start, int end) {
-        if (start > -1 && start < edges.size()) {
-            if (end > -1 && end < edges.size()) {
+        if (start > -1 && start < vertices.size()) {
+            if (end > -1 && end < vertices.size()) {
                 if (end != start) {
                     return true;
                 }
             }
         }
         return false;
+    }
+
+    public void printGraph(){
+        printEdges();
+        printVertices();
     }
 
 }
