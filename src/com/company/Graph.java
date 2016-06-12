@@ -90,17 +90,21 @@ public class Graph<T> {
         if (isValidEdge(start, end)) {
             Vertex startVertex = vertices.get(start);
             Vertex endVertex = vertices.get(end);
-            removeEdge(start, end);
+            removeEdge(startVertex, endVertex);
         } else {
             System.out.println("Invalid data");
         }
     }
 
     private void removeEdges(Vertex vertex) {
-        for (Edge edge : edges) {
-            if (edge.contains(vertex)) {
-                edges.remove(edge);
+        ArrayList<Integer> indexesToRemove = new ArrayList<Integer>();
+        for (int i=0; i<edges.size(); i++) {
+            if (edges.get(i).contains(vertex)) {
+                indexesToRemove.add(i);
             }
+        }
+        for (int i=0; i<indexesToRemove.size(); i++){
+            edges.remove(indexesToRemove.get(i)-i);
         }
     }
 
