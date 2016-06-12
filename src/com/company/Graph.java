@@ -34,11 +34,22 @@ public class Graph<T> {
     }
 
     public void removeVertex(int index) {
-        //todo
+        if (index > -1 && index < vertices.size()){
+            vertices.remove(index);
+        }
+        else {
+            System.out.println("Invalid index");
+        }
     }
 
     public void removeVertex(T data) {
-        //todo
+        Vertex vertex = search(data);
+        if (vertex!=null){
+            vertices.remove(vertex);
+        }
+        else {
+            System.out.println("Such element doesn't exist in the graph");
+        }
     }
 
     public void addEdge(int start, int end, int weight) {
